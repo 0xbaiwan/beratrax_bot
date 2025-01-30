@@ -13,9 +13,9 @@
 
 ## 使用前提
 
-- 电脑上已安装 Node.js
+- 已安装 Node.js
 - 所有钱包必须在以太坊主网上有 0.001 ETH 才能领取 Bera 水龙头
-- 如果你已经有注册的账户，只需创建 `wallets.json` 并在其中输入钱包详情
+- 如果你已经有注册的账户，只需创建 `wallets.json` 并在其中输入钱包私钥
 - 可以在 `wallet-example.json` 中查看钱包示例
 - 或者使用命令 `npm run setup` 创建新钱包
 - 验证码 API 密钥可以在这里获取：http://2captcha.com 或 http://anti-captcha.com
