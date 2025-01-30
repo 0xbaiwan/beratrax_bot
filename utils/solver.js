@@ -6,37 +6,37 @@ const pageurl = "https://bartio.faucet.berachain.com/";
 const sitekey = "0x4AAAAAAARdAuciFArKhVwt";
 
 /**
- * Solve CAPTCHA using 2Captcha API
- * @param {string} key - 2Captcha API key
- * @returns {Promise<string>} - Solved CAPTCHA token
+ * 使用2Captcha API解决验证码
+ * @param {string} key - 2Captcha API密钥
+ * @returns {Promise<string>} - 已解决的验证码令牌
  */
 export async function solve2Captcha(key) {
     const solver = new Solver(key);
 
     try {
         const result = await solver.cloudflareTurnstile({ pageurl, sitekey });
-        log.info(`Captcha solved....`);
-        return result.data; // Return the solved token
+        log.info(`验证码已解决....`);
+        return result.data; // 返回已解决的令牌
     } catch (err) {
-        log.error(`2Captcha Error: ${err.message}`);
+        log.error(`2Captcha错误: ${err.message}`);
         return null;
     }
 }
 
 /**
- * Solve CAPTCHA using Anti-Captcha API
- * @param {string} key - Anti-Captcha API key
- * @returns {Promise<string>} - Solved CAPTCHA token
+ * 使用Anti-Captcha API解决验证码
+ * @param {string} key - Anti-Captcha API密钥
+ * @returns {Promise<string>} - 已解决的验证码令牌
  */
 export async function solveAntiCaptcha(key) {
     anticaptcha.setAPIKey(key);
 
     try {
         const token = await anticaptcha.solveTurnstileProxyless(pageurl, sitekey);
-        log.info("Anti-Captcha Solved!");
-        return token; // Return the solved token
+        log.info("Anti-Captcha验证码已解决！");
+        return token; // 返回已解决的令牌
     } catch (err) {
-        log.error(`Anti-Captcha Error: ${err.message}`);
+        log.error(`Anti-Captcha错误: ${err.message}`);
         return null;
     }
 }

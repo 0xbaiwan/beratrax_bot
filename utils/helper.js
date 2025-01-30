@@ -10,17 +10,17 @@ export function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms * 1000));
 }
 
-// Save data to a file
+// 保存数据到文件
 export async function saveToFile(filename, data) {
     try {
         await fs.appendFile(filename, `${data}\n`, 'utf-8');
-        log.info(`Data saved to ${filename}`);
+        log.info(`数据已保存到 ${filename}`);
     } catch (error) {
-        log.error(`Failed to save data to ${filename}: ${error.message}`);
+        log.error(`保存数据到 ${filename} 失败: ${error.message}`);
     }
 }
 
-// Read the file
+// 读取文件
 export async function readFile(pathFile) {
     try {
         const datas = await fs.readFile(pathFile, 'utf8');
@@ -28,12 +28,12 @@ export async function readFile(pathFile) {
             .map(data => data.trim())
             .filter(data => data.length > 0);
     } catch (error) {
-        log.error(`Error reading file: ${error.message}`);
+        log.error(`读取文件错误: ${error.message}`);
         return [];
     }
 }
 
-// Create an agent
+// 创建代理
 export const newAgent = (proxy = null) => {
     if (proxy) {
         if (proxy.startsWith('http://')) {
@@ -41,7 +41,7 @@ export const newAgent = (proxy = null) => {
         } else if (proxy.startsWith('socks4://') || proxy.startsWith('socks5://')) {
             return new SocksProxyAgent(proxy);
         } else {
-            log.warn(`Unsupported proxy type: ${proxy}`);
+            log.warn(`不支持的代理类型: ${proxy}`);
             return null;
         }
     }
@@ -56,7 +56,7 @@ export async function readWallets() {
         return JSON.parse(data);
     } catch (err) {
         if (err.code === 'ENOENT') {
-            log.info("No wallets found in wallets.json");
+            log.info("在wallets.json中未找到钱包");
             return [];
         }
         throw err;
@@ -68,7 +68,7 @@ export async function solveCaptcha(apikey, type = '1') {
         const captcha = type === '1' ? await solve2Captcha(apikey) : await solveAntiCaptcha(apikey)
         return captcha;
     } catch (error) {
-        log.error(`Error solving captcha: ${error.message}`);
+        log.error(`解决验证码时出错: ${error.message}`);
         return null;
     }
 }

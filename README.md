@@ -1,53 +1,67 @@
-# beratrax Bot Auto claim bera faucet and auto stake
+# beratrax Bot 自动领取 Bera 水龙头和自动质押
 
 ![banner](image-1.png)
-- website : [https://beratrax.com/](https://testnet.beratrax.com/GeognosticalBera)
-## Features
+- 网站：[https://beratrax.com/](https://testnet.beratrax.com/GeognosticalBera)
 
-- **Auto Claim Faucet Bera**
-- **Auto Zap In And Stake Lp**
-- **Auto Register Wallets**
-- **Auto Generate New Wallets**
-- **Support Proxy usage**
+## 功能特点
 
-## Prerequisites
+- **自动领取 Bera 水龙头**
+- **自动注入资金并质押 LP**
+- **自动注册钱包**
+- **自动生成新钱包**
+- **支持代理使用**
 
-- Node.js installed on your machine
-- All wallets mush have 0.001 Eth on ethereum mainnet to claim faucet bera 
-- if you already have account registered just create `wallets.json` and input wallet details there
-- look wallet example in `wallet-example.json`
-- or just create new wallet using sc `npm run setup`
-- Captcha ApiKey get one here http://2captcha.com or http://anti-captcha.com
+## 使用前提
 
-## Installation
+- 电脑上已安装 Node.js
+- 所有钱包必须在以太坊主网上有 0.001 ETH 才能领取 Bera 水龙头
+- 如果你已经有注册的账户，只需创建 `wallets.json` 并在其中输入钱包详情
+- 可以在 `wallet-example.json` 中查看钱包示例
+- 或者使用命令 `npm run setup` 创建新钱包
+- 验证码 API 密钥可以在这里获取：http://2captcha.com 或 http://anti-captcha.com
 
-1. Clone the repository:
+## 安装步骤
+
+1. 克隆仓库：
     ```sh
-    git clone https://github.com/Zlkcyber/beratraxBot.git
-    cd beratraxBot
+    git clone https://github.com/0xbaiwan/beratrax_bot.git
+    cd beratrax_bot
     ```
 
-2. Install the required dependencies:
+2. 安装所需依赖：
     ```sh
     npm install
     ```
-3. Create new wallets
+
+3. 创建新钱包：
     ```
     npm run setup
     ```
-4. optionally you can use proxy: 
-- paste proxy in `proxy.txt` format `http://username:password@ip:port` 
+
+4. 可选：使用代理
+- 在 `proxy.txt` 中粘贴代理，格式为 `http://username:password@ip:port`
     ```sh
     nano proxy.txt
     ```
-5. Run the script:
+
+5. 运行脚本：
     ```sh
     npm run start
     ```
 
-## All wallets information saved at `wallets.json`
+所有钱包信息保存在 `wallets.json` 中
 
+## 代理服务（可选）
 
-## ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+### 免费静态住宅代理
+- [WebShare](https://www.webshare.io/?referral_code=gtw7lwqqelgu)
+- [ProxyScrape](https://proxyscrape.com/)
+- [MonoSans](https://github.com/monosans/proxy-list)
 
-This project is licensed under the [MIT License](LICENSE).
+### 付费高级静态住宅代理
+- [922proxy](https://www.922proxy.com/register?inviter_code=d6416857)
+- [Proxy-Cheap](https://app.proxy-cheap.com/r/Pd6sqg)
+- [Infatica](https://dashboard.infatica.io/aff.php?aff=580)
+
+### 付费动态IP代理
+- [IPRoyal](https://iproyal.com/?r=733417)
